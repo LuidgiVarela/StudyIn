@@ -1,69 +1,103 @@
+import { Users, BookOpen, Layers } from "lucide-react";
 import Link from "next/link";
 
-import { LatestPost } from "@/app/_components/post";
-import { auth } from "@/server/auth";
-import { api, HydrateClient } from "@/trpc/server";
+// ...
 
-export default async function Home() {
-  const hello = await api.post.hello({ text: "from tRPC" });
-  const session = await auth();
+<Link href="/login">
+  <button className="border border-[#0A66C2] text-[#0A66C2] font-medium text-sm px-4 py-1.5 rounded-full hover:bg-[#0A66C2]/10 transition">
+    Entrar
+  </button>
+</Link>
 
-  if (session?.user) {
-    void api.post.getLatest.prefetch();
-  }
 
+export default function HomePage() {
   return (
-    <HydrateClient>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-          <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-            Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
-          </h1>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-            <Link
-              className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
-              href="https://create.t3.gg/en/usage/first-steps"
-              target="_blank"
-            >
-              <h3 className="text-2xl font-bold">First Steps →</h3>
-              <div className="text-lg">
-                Just the basics - Everything you need to know to set up your
-                database and authentication.
-              </div>
-            </Link>
-            <Link
-              className="flex max-w-xs flex-col gap-4 rounded-xl bg-white/10 p-4 hover:bg-white/20"
-              href="https://create.t3.gg/en/introduction"
-              target="_blank"
-            >
-              <h3 className="text-2xl font-bold">Documentation →</h3>
-              <div className="text-lg">
-                Learn more about Create T3 App, the libraries it uses, and how
-                to deploy it.
-              </div>
-            </Link>
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            <p className="text-2xl text-white">
-              {hello ? hello.greeting : "Loading tRPC query..."}
-            </p>
-
-            <div className="flex flex-col items-center justify-center gap-4">
-              <p className="text-center text-2xl text-white">
-                {session && <span>Logged in as {session.user?.name}</span>}
-              </p>
-              <Link
-                href={session ? "/api/auth/signout" : "/api/auth/signin"}
-                className="rounded-full bg-white/10 px-10 py-3 font-semibold no-underline transition hover:bg-white/20"
-              >
-                {session ? "Sign out" : "Sign in"}
-              </Link>
-            </div>
-          </div>
-
-          {session?.user && <LatestPost />}
+    <main className="bg-white min-h-screen">
+      {/* Barra superior */}
+      <header className="flex items-center justify-between px-8 py-1 bg-white shadow-sm">
+        {/* Logo */}
+        <div className="flex items-center gap-1">
+          <img src="/logo.png" alt="StudyIn Logo" className="h-25 w-25" />
         </div>
-      </main>
-    </HydrateClient>
+
+        {/* Barra de pesquisa */}
+        <div className="flex-1 mx-8 relative">
+          <input
+            type="text"
+            placeholder="Pesquisar pessoas, grupos ou artigos..."
+            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#0A66C2] transition"
+          />
+          <span className="absolute left-3 top-2.5 text-gray-400">🔍</span>
+        </div>
+
+        {/* Menu de navegação */}
+        <nav className="flex items-center gap-8 text-gray-600 text-sm">
+
+          <Link href="/pessoas" className="flex flex-col items-center hover:text-blue-700">
+            <Users className="h-5 w-5 mb-1" />
+            <span>Pessoas</span>
+          </Link>
+
+          <Link href="/learning" className="flex flex-col items-center hover:text-blue-700">
+            <BookOpen className="h-5 w-5 mb-1" />
+            <span>Learning</span>
+          </Link>
+
+          <Link href="/grupos" className="flex flex-col items-center hover:text-blue-700">
+            <Layers className="h-5 w-5 mb-1" />
+            <span>Grupos</span>
+          </Link>
+
+          {/* Botões */}
+          <div className="flex items-center gap-4 ml-4">
+            <Link href="/login">
+              <button className="border border-[#0A66C2] text-[#0A66C2] font-medium text-sm px-4 py-1.5 rounded-full hover:bg-[#0A66C2]/10 transition">
+                Entrar
+              </button>
+            </Link>
+
+            <Link href="/register">
+              <button className="bg-[#0A66C2] hover:bg-[#004182] text-white text-sm font-medium px-4 py-1.5 rounded-full transition">
+                Cadastre-se agora
+              </button>
+            </Link>
+          </div>
+        </nav>
+      </header>
+
+      {/* Seção principal (estilo LinkedIn) */}
+      <section className="flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-20 bg-white">
+        {/* Texto à esquerda */}
+        <div className="max-w-lg mb-12 md:mb-0">
+          <h1 className="text-4xl md:text-5xl font-semibold text-gray-800 leading-tight">
+            Cadastre-se agora e crie novos amigos para estudos coletivos
+          </h1>
+          <p className="text-gray-600 mt-4 text-lg">
+            Junte-se à comunidade <span className="font-semibold">StudyIn</span> e conecte-se com pessoas, grupos e
+            oportunidades que combinam com seus interesses acadêmicos e
+            profissionais.
+          </p>
+
+          {/* Botões */}
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <button className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition">
+              Continuar com Google
+            </button>
+            <button className="border border-gray-400 text-gray-700 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition">
+              Entrar com e-mail
+            </button>
+          </div>
+        </div>
+
+        {/* Imagem à direita */}
+        <div className="w-full md:w-1/2 flex justify-center">
+          <img
+            src="/illustration.png"
+            alt="Ilustração StudyIn"
+            className="max-w-md w-full"
+          />
+        </div>
+      </section>
+    </main>
   );
 }
