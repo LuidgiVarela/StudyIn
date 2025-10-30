@@ -1,29 +1,86 @@
-# Create T3 App
+# 🎓 StudyIn
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+**StudyIn** é uma plataforma moderna voltada para estudantes, criada para facilitar a organização dos estudos, o compartilhamento de materiais e o acesso a conteúdos educacionais de forma prática e intuitiva.
 
-## What's next? How do I make an app with this?
+Desenvolvido com base na poderosa **T3 Stack** — combinando **Next.js**, **Prisma**, **Tailwind CSS** e **tRPC** — o projeto oferece alta performance, escalabilidade e uma estrutura limpa para futuras expansões.
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+---
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## 🚀 Funcionalidades Principais
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- 📚 **Organização de estudos** – Crie e gerencie suas matérias, anotações e cronogramas de forma simples.  
+- 👥 **Comunidade estudantil** – Conecte-se com outros estudantes para trocar conhecimentos e experiências.  
+- 🧠 **Simulados e desafios** – Treine seus conhecimentos com questões e testes interativos.  
+- 📈 **Progresso de aprendizado** – Acompanhe seu desempenho e visualize sua evolução ao longo do tempo.  
+- ☁️ **Interface intuitiva** – Design limpo, responsivo e voltado à experiência do usuário.
 
-## Learn More
+---
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+## 🛠️ Tecnologias Utilizadas
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+| Tecnologia | Descrição |
+|-------------|------------|
+| **Next.js** | Framework React para renderização moderna (SSR e SSG). |
+| **Prisma** | ORM para modelagem e acesso ao banco de dados. |
+| **tRPC** | Comunicação typesafe entre backend e frontend. |
+| **Tailwind CSS** | Framework CSS utilitário para estilização ágil e responsiva. |
+| **NextAuth.js** | Autenticação e controle de sessões seguras. |
+| **Drizzle ORM** | Alternativa moderna e leve para modelagem de dados. |
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+---
 
-## How do I deploy this?
+## 💻 Como Executar o Projeto
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+### 1️⃣ Clonar o repositório
+```bash
+git clone https://github.com/LuidgiVarela/StudyIn.git
+cd StudyIn
+```
+
+### 2️⃣ Instalar dependências
+```bash
+npm install
+```
+
+### 3️⃣ Configurar variáveis de ambiente
+Crie um arquivo `.env` na raiz do projeto e adicione suas chaves (banco de dados, autenticação, etc).
+
+Exemplo:
+```
+DATABASE_URL="postgresql://usuario:senha@localhost:5432/studyin"
+NEXTAUTH_SECRET="chave_aleatoria_segura"
+```
+
+### 4️⃣ Rodar o servidor de desenvolvimento
+```bash
+npm run dev
+```
+
+O projeto ficará disponível em:  
+👉 [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🧩 Estrutura do Projeto
+
+```
+StudyIn/
+├── src/
+│   ├── pages/           # Páginas da aplicação (Next.js)
+│   ├── components/      # Componentes reutilizáveis
+│   ├── server/          # Backend e rotas tRPC
+│   └── styles/          # Estilos com Tailwind
+├── prisma/              # Esquema e migrações do banco
+├── public/              # Imagens e assets estáticos
+├── package.json         # Dependências do projeto
+└── README.md
+```
+
+---
+
+## 🧑‍💻 Autor
+
+Desenvolvido por **[Luidgi Varela Carneiro] e
+**[Arthur Souza chagas]
+Estudantes de Engenharia de Computação na Universidade de Brasília (UnB).  
+
