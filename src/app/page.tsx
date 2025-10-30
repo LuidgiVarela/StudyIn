@@ -172,19 +172,26 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-col gap-3">
-            {[
-              "Encontre um colega de classe ou de curso",
-              "Descubra um grupo de estudo",
-              "Participe de um projeto ou pesquisa",
-            ].map((option) => (
-              <button
-                key={option}
-                className="flex justify-between items-center bg-white border border-gray-300 px-5 py-3 rounded-md text-gray-700 font-medium hover:bg-gray-100 transition"
-              >
-                {option}
+            <Link href="/pessoas">
+              <button className="flex justify-between items-center bg-white border border-gray-300 px-5 py-3 rounded-md text-gray-700 font-medium hover:bg-gray-100 transition w-full text-left">
+                Encontre um colega de classe ou de curso
                 <span className="text-gray-400">›</span>
               </button>
-            ))}
+            </Link>
+
+            <Link href="/grupos">
+              <button className="flex justify-between items-center bg-white border border-gray-300 px-5 py-3 rounded-md text-gray-700 font-medium hover:bg-gray-100 transition w-full text-left">
+                Descubra um grupo de estudo
+                <span className="text-gray-400">›</span>
+              </button>
+            </Link>
+
+            <Link href="/learning">
+              <button className="flex justify-between items-center bg-white border border-gray-300 px-5 py-3 rounded-md text-gray-700 font-medium hover:bg-gray-100 transition w-full text-left">
+                Participe de um projeto ou pesquisa
+                <span className="text-gray-400">›</span>
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -198,52 +205,61 @@ export default function HomePage() {
         </div>
       </section>
 
+
       {/* ================= RODAPÉ ILUSTRADO ================= */}
       <section className="bg-white border-t border-gray-200">
         <img
           src="/footer-illustration.png"
           alt="Comunidade StudyIn"
-          className="w-full"
+          className="w-full h-[400px] object-cover"
         />
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-8 md:px-20 py-12 text-gray-600 text-sm bg-gray-50 border-t border-gray-200">
+          {/* GERAL */}
           <div>
             <h3 className="font-semibold text-gray-800 mb-3">Geral</h3>
             <ul className="space-y-2">
-              <li>Cadastre-se</li>
-              <li>Central de Ajuda</li>
-              <li>Sobre</li>
-              <li>Blog</li>
-              <li>Carreiras</li>
+              <li><Link href="/register" className="hover:text-[#0A66C2] transition">Cadastre-se</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Central de Ajuda</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Sobre</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Blog</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Carreiras</Link></li>
             </ul>
           </div>
+
+          {/* NAVEGAR */}
           <div>
             <h3 className="font-semibold text-gray-800 mb-3">Navegar</h3>
             <ul className="space-y-2">
-              <li>Grupos</li>
-              <li>Learning</li>
-              <li>Eventos</li>
-              <li>Mentorias</li>
-              <li>Pesquisas</li>
+              <li><Link href="/grupos" className="hover:text-[#0A66C2] transition">Grupos</Link></li>
+              <li><Link href="/learning" className="hover:text-[#0A66C2] transition">Learning</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Eventos</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Mentorias</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Pesquisas</Link></li>
             </ul>
           </div>
+
+          {/* COMUNIDADE */}
           <div>
             <h3 className="font-semibold text-gray-800 mb-3">Comunidade</h3>
             <ul className="space-y-2">
-              <li>Projetos</li>
-              <li>Publicações</li>
-              <li>Networking</li>
-              <li>Estágios</li>
-              <li>Voluntariado</li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Projetos</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Publicações</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Networking</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Estágios</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Voluntariado</Link></li>
             </ul>
           </div>
+
+          {/* DIRETÓRIOS */}
           <div>
             <h3 className="font-semibold text-gray-800 mb-3">Diretórios</h3>
             <ul className="space-y-2">
-              <li>Usuários</li>
-              <li>Instituições</li>
-              <li>Áreas de estudo</li>
-              <li>Artigos</li>
-              <li>Serviços</li>
+              <li><Link href="/pessoas" className="hover:text-[#0A66C2] transition">Usuários</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Instituições</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Áreas de estudo</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Artigos</Link></li>
+              <li><Link href="#" className="hover:text-[#0A66C2] transition">Serviços</Link></li>
             </ul>
           </div>
         </div>

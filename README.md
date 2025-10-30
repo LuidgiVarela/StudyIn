@@ -78,9 +78,9 @@ StudyIn/
 
 ---
 
-## 🧑‍💻 Autor
+## 👨‍💻 Autor
 
-Desenvolvido por **[Luidgi Varela Carneiro] e
-**[Arthur Souza chagas]
-Estudantes de Engenharia de Computação na Universidade de Brasília (UnB).  
+Desenvolvido por [**Luidgi Varela Carneiro**] e [**Arthur Souza Chagas**]  
+Estudantes de Engenharia de Computação na Universidade de Brasília (UnB).
+ 
 
