@@ -22,7 +22,7 @@ export default function LearningPage() {
       categoria: "Desenvolvimento profissional",
       duracao: "3 h 12 min",
       autor: "Equipe StudyIn Learning",
-      imagem: "/cursos/gestao-tempo.jpg",
+      imagem: "/cursos/gestao-tempo.png",
       nivel: "Intermediário",
     },
     {
@@ -30,7 +30,7 @@ export default function LearningPage() {
       categoria: "Software e ferramentas de negócios",
       duracao: "41 min",
       autor: "Equipe StudyIn Learning",
-      imagem: "/cursos/excel.jpg",
+      imagem: "/cursos/excel.png",
       nivel: "Básico",
     },
     {
@@ -38,7 +38,7 @@ export default function LearningPage() {
       categoria: "Tecnologia",
       duracao: "42 min",
       autor: "Equipe StudyIn Learning",
-      imagem: "/cursos/outlook.jpg",
+      imagem: "/cursos/outlook.png",
       nivel: "Básico",
     },
     {
@@ -46,7 +46,7 @@ export default function LearningPage() {
       categoria: "Tecnologia",
       duracao: "4 h 10 min",
       autor: "Equipe StudyIn Learning",
-      imagem: "/cursos/python.jpg",
+      imagem: "/cursos/python.png",
       nivel: "Básico",
     },
     {
@@ -54,7 +54,7 @@ export default function LearningPage() {
       categoria: "Negócios",
       duracao: "2 h 25 min",
       autor: "Equipe StudyIn Learning",
-      imagem: "/cursos/apresentacao.jpg",
+      imagem: "/cursos/apresentacao.png",
       nivel: "Intermediário",
     },
     {
@@ -62,7 +62,7 @@ export default function LearningPage() {
       categoria: "Negócios",
       duracao: "3 h 5 min",
       autor: "Equipe StudyIn Learning",
-      imagem: "/cursos/gestao-projetos.jpg",
+      imagem: "/cursos/gestao-projetos.png",
       nivel: "Intermediário",
     },
   ];
